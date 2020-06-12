@@ -1,0 +1,28 @@
+
+<!-- <add-form ></add-form> -->
+
+<div class="container top">
+    
+    <div class="container" id="left">
+        <h1>TypeScript Examples</h1>
+        <!-- [(ngModel)]="search_text"  -->
+        
+        <input class="search" type='search' placeholder ='Search Here' (input)="search($event)"/>
+        <div *ngFor="let item of content" (mouseout)="reset()" >
+            <div 
+            class="item" 
+            (mouseover)="displayAbout(item)" 
+            [routerLink]="['/examples',item.id]"  >{{item.title}} 
+            
+        </div>
+        </div>
+
+        <button class="btn btn-primary add" [routerLink]="['/new']" >Add Example</button>
+    </div>
+    <div class="container" id="right1">
+         <div class="about">
+             {{about}}
+         </div>
+    </div>
+
+</div>

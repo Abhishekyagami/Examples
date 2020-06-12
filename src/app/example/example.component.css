@@ -1,0 +1,22 @@
+
+
+#right{
+    width: 50%;
+    float: right;
+    padding-top: 50px;
+    padding-right: 0px;
+    padding-left: 0px;
+     
+     position: absolute;
+     margin-top: 11em;
+     margin-left: 40em;
+     margin-right: 0px;
+}
+iframe{
+    border: none;
+    
+}
+
+.content{
+    color: azure;
+}

@@ -1,0 +1,59 @@
+<div class="container form-container">
+            
+    <div class="col-md-6 form-2">
+        <h3>Add Example</h3>
+        <p>(Add link or Description of example)</p>
+        <form [formGroup]="dataForm">
+            <div class="form-group">
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Example Title " 
+                    formControlName="title" 
+                    required/>
+                <div 
+                    *ngIf="dataForm.controls.title.touched && dataForm.controls.title.invalid" 
+                    class="alert alert-danger">
+                            Title is required
+                    <div 
+                        *ngIf="dataForm.controls.title.errors.minlength">
+                            Title should be minimum 4 chars
+                    </div>
+                </div>
+            </div>       
+            <div class="form-group">
+                <input 
+                    type="text" 
+                    name="link" 
+                    class="form-control" 
+                    placeholder="Link" 
+                    formControlName="link"/>
+            </div>
+            <div class="form-group">
+                <textarea 
+                    name="content" 
+                    formControlName="body" 
+                    class="form-control"  
+                    cols="47" 
+                    rows="5"
+                    placeholder="Type Description here">
+                </textarea>
+            </div>
+            <div class="form-group">
+                <input 
+                    type="submit" 
+                    class="btnSubmit" 
+                    value="Add"  
+                    (click)="add1(dataForm.value)" 
+                    [routerLink]="['']" />
+                <input 
+                    type="submit" 
+                    class="btnSubmit" 
+                    value="Cancel" 
+                    [routerLink]="['']"/>
+            </div>
+           
+        </form>
+        
+    </div>
+</div>
